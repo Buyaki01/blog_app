@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'users#index'
-  get 'posts/index'
-  get 'posts/show'
-  get 'users/show'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
-end
+  root 'users#index'
+  resources :users, only: [:index, :show] do
+    resources :posts, only: [:index, :show] 
+  end 
+end 
