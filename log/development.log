@@ -1,0 +1,79 @@
+  [1m[35m (648.8ms)[0m  [1m[35mCREATE DATABASE "blog_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (598.2ms)[0m  [1m[35mCREATE DATABASE "blog_app_test" ENCODING = 'unicode'[0m
+  [1m[35m (87.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (82.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1508658759281986305)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-03-25 17:18:53.274108"], ["updated_at", "2022-03-25 17:18:53.274108"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1508658759281986305)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-03-25 20:20:01 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ritta/.rvm/gems/ruby-3.0.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ritta/.rvm/gems/ruby-3.0.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.2ms | Allocations: 737)
+Completed 200 OK in 11ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 6952)
+
+
+Started GET "/" for ::1 at 2022-03-25 20:29:00 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ritta/.rvm/gems/ruby-3.0.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ritta/.rvm/gems/ruby-3.0.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 371)
+Completed 200 OK in 3ms (Views: 2.1ms | Allocations: 1237)
+
+
+Started GET "/" for ::1 at 2022-03-25 20:29:27 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ritta/.rvm/gems/ruby-3.0.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ritta/.rvm/gems/ruby-3.0.0/gems/railties-7.0.2.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | Allocations: 633)
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 5719)
+
+
+Started GET "/users" for ::1 at 2022-03-25 20:29:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2022-03-25 20:30:51 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/" for ::1 at 2022-03-25 20:30:56 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 126)
+  Rendered layout layouts/application.html.erb (Duration: 187.7ms | Allocations: 89924)
+Completed 200 OK in 192ms (Views: 190.6ms | ActiveRecord: 0.0ms | Allocations: 90986)
+
+
+Started GET "/users/show" for ::1 at 2022-03-25 20:34:44 +0300
+Processing by UsersController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 120)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2481)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 2859)
+
+
+Started GET "/posts/show" for ::1 at 2022-03-25 20:34:58 +0300
+Processing by PostsController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 122)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2548)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 3415)
+
+
+Started GET "/posts/index" for ::1 at 2022-03-25 20:35:08 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 119)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 2472)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 2850)
+
+
