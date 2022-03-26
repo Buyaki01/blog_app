@@ -16,7 +16,7 @@ Blog app allows users to login to their account and create a post that other use
 
 ### How to use the site
 Try out the following routes in the browser:
- - `http://localhost:3000/users/index` 
+ - `http://localhost:3000/users` 
  - `http://localhost:3000/users/show`
  - `http://localhost:3000/posts/index` 
  - `http://localhost:3000/posts/show`
