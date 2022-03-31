@@ -17,7 +17,7 @@
         <h6 class="d-flex justify-content-end"> Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter%> </h6>
       </div>
     
-      <div class="border mt-3 p-2">
+      <div class="border p-2">
         <% post.comments.each do |comment| %>
           <div>
             <h4> <%= comment.author.name %>: <%= comment.text %> </h4>
