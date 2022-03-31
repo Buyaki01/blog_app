@@ -1,11 +1,15 @@
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-3 border"> 
-      <img src="https://unsplash.com/photos/F_-0BxGuVvo" alt="blog"> 
-    </div>
-    <div class="col-9 border">
-      <h2> User name </h2>
-      <h6 class="d-flex justify-content-end"> Number of posts: x</h6>
-    </div>
-  </div>
+<div class="container m-5">
+  <% @users.each do |user| %>
+    <%= link_to(user) do %>
+      <div class="row">
+        <div class="col-3 border"> 
+          <%= image_tag(user.photo) %> 
+        </div>
+        <div class="col-8 offset-1 border">
+          <h2> <%= user.name %> </h2>
+          <h6 class="d-flex justify-content-end"> Number of posts: <%= user.posts_counter || 0 %>  </h6>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>

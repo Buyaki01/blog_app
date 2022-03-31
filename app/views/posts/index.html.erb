@@ -1,2 +1,33 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="container m-5">
+  <% @posts.each do |post| %>
+    <%= link_to(post) do %>
+      <div class="row p-2">
+        <div class="col-3 border"> 
+          <%= image_tag(post.author.photo) %> 
+        </div>
+        <div class="col-8 offset-1 border">
+          <h2> <%= post.author.name %> </h2>
+          <h6 class="d-flex justify-content-end"> Number of posts: <%= post.author.posts_counter %> </h6>
+        </div>
+      </div>
+
+      <div class="border mt-3 p-2">
+        <h3> <%=post.title%> </h3>
+        <p> <%=post.text%> </p>
+        <h6 class="d-flex justify-content-end"> Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter%> </h6>
+      </div>
+    
+      <div class="border mt-3 p-2">
+        <% post.comments.each do |comment| %>
+          <div>
+            <h4> <%= comment.author.name %>: <%= comment.text %> </h4>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="d-flex justify-content-center mt-3 p-2">
+    <button> See all posts </button>
+  </div>
+</div>
