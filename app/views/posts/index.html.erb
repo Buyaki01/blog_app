@@ -1,2 +1,34 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="container m-5">
+  <div class="row p-2">
+    <div class="col-3 border"> 
+      <%= image_tag(@user.photo) %> 
+    </div>
+    <div class="col-8 offset-1 border">
+      <h2> <%= @user.name %> </h2>
+      <h6 class="d-flex justify-content-end"> Number of posts: <%= @user.posts_counter %> </h6>
+    </div>
+  </div>
+      
+  <% @posts.each do |post| %>
+    <div class="border mt-3 p-2">
+      <%= link_to user_post_path(@user.id, post.id) do %>
+        <h3> <%=post.title%> </h3>
+        <p class="pt-3"> <%=post.text%> </p>
+        <h6 class="d-flex justify-content-end"> Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter%> </h6>
+      <% end %>
+    </div>
+    
+    <div class="border p-2">
+      <% post.comments.each do |comment| %>
+        <div>
+          <h4> <%= comment.author.name %>: <%= comment.text %> </h4>
+        </div>
+      <% end %>
+    </div>
+    
+  <% end %>
+
+  <div class="d-flex justify-content-center mt-3 p-2">
+    <button> Pagination </button>
+  </div>
+</div>
