@@ -12,5 +12,9 @@
       </div>
     <% end %>
   </div>
+  <%= form_with url: "/users/#{@post.author_id}/posts/#{@post.id}/likes", scope: :like do |form| %> 
+    <%= form.submit "Like" %> 
+  <% end %> 
+  <%= render partial: "add_comment", local: { post: @post } %> 
 </div>
 
