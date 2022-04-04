@@ -3,7 +3,7 @@
     <%= link_to(user) do %>
       <div class="row">
         <div class="col-3 border"> 
-          <%= image_tag(user.photo) %> 
+          <img src="<%= user.photo %>" alt="profile photo" />
         </div>
         <div class="col-8 offset-1 border">
           <h2> <%= user.name %> </h2>
