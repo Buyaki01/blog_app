@@ -1,10 +1,10 @@
 <div class="container m-5">
   <div class="row">
-    <div class="col-3 border"> 
-      <%= image_tag(@user.photo) %> 
+    <div class="col-3 border p-2"> 
+      <img src="<%= @user.photo %>" class="img-thumbnail" alt="profile photo" />
     </div>
 
-    <div class="col-8 offset-1 border">
+    <div class="col-8 offset-1 border p-2">
       <h2> <%= @user.name %> </h2>
       <h6 class="d-flex justify-content-end"> Number of posts: <%= @user.posts_counter %> </h6>
     </div>
