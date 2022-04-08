@@ -1,23 +1,23 @@
-<h2 class="m-3">Log in</h2>
+<h2 class="m-3 d-flex justify-content-center">Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field m-3 row w-50">
-    <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email" %>
+  <div class="field m-3 d-flex justify-content-center">
+    <%= f.email_field :email, placeholder: "Email", class: "w-50", autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field m-3 row w-50">
-    <%= f.password_field :password, placeholder: "Password", autocomplete: "current-password" %>
+  <div class="field m-3 d-flex justify-content-center">
+    <%= f.password_field :password, placeholder: "Password", class: "w-50", autocomplete: "current-password" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field m-3">
+    <div class="field", style="margin-left:350px;">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
   <% end %>
 
-  <div class="actions m-3">
-    <%= f.submit "Log in" %>
+  <div class="actions m-3 d-flex justify-content-center">
+    <%= f.submit "Log in", class: "w-50" %>
   </div>
 <% end %>
 
