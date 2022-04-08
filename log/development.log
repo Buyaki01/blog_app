@@ -10463,3 +10463,466 @@ Processing by Devise::PasswordsController#new as HTML
 Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 5185)
 
 
+Started GET "/users/" for ::1 at 2022-04-08 11:58:37 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 15.8ms | Allocations: 3158)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 5632)
+Completed 200 OK in 19ms (Views: 18.9ms | ActiveRecord: 4.7ms | Allocations: 5970)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-04-08 11:58:46 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 124)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1001)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 3141)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 3967)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-04-08 11:59:06 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ritta.buyaki@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ritta.buyaki@yahoo.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 307ms (ActiveRecord: 1.2ms | Allocations: 4643)
+
+
+Started GET "/" for ::1 at 2022-04-08 11:59:07 +0300
+Processing by UsersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 849)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3994)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.4ms | Allocations: 4386)
+
+
+Started GET "/users/5" for ::1 at 2022-04-08 11:59:19 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1[0m  [["author_id", 5]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 ORDER BY created_at DESC LIMIT $2[0m  [["author_id", 5], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2024)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 5179)
+Completed 200 OK in 44ms (Views: 6.4ms | ActiveRecord: 4.5ms | Allocations: 16972)
+
+
+Started GET "/users/5/posts/new" for ::1 at 2022-04-08 12:02:30 +0300
+Processing by PostsController#new as HTML
+  Parameters: {"user_id"=>"5"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1057)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 3992)
+Completed 200 OK in 62ms (Views: 30.2ms | ActiveRecord: 8.2ms | Allocations: 8733)
+
+
+Started POST "/users/5/posts" for ::1 at 2022-04-08 12:03:10 +0300
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Beauty", "text"=>"True beauty is found in the Lord."}, "commit"=>"Post", "user_id"=>"5"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:20:in `block (2 levels) in create'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `block (2 levels) in create'
+  [1m[36mPost Create (2.0ms)[0m  [1m[32mINSERT INTO "posts" ("author_id", "title", "text", "comments_counter", "likes_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["author_id", 5], ["title", "Beauty"], ["text", "True beauty is found in the Lord."], ["comments_counter", 0], ["likes_counter", 0], ["created_at", "2022-04-08 09:03:10.534100"], ["updated_at", "2022-04-08 09:03:10.534100"]]
+  ↳ app/controllers/posts_controller.rb:20:in `block (2 levels) in create'
+  [1m[36mUser Update All (1.2ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 5]]
+  ↳ app/models/post.rb:18:in `update_posts_counter'
+  [1m[36mTRANSACTION (15.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:20:in `block (2 levels) in create'
+Redirected to http://localhost:3000/users/5/posts/
+Completed 302 Found in 88ms (ActiveRecord: 21.2ms | Allocations: 10623)
+
+
+Started GET "/users/5/posts/" for ::1 at 2022-04-08 12:03:10 +0300
+Processing by PostsController#index as TURBO_STREAM
+  Parameters: {"user_id"=>"5"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1[0m  [["author_id", 5]]
+  ↳ app/views/posts/index.html.erb:12
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:12
+  Rendered posts/index.html.erb within layouts/application (Duration: 33.7ms | Allocations: 5300)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 58.6ms | Allocations: 8465)
+Completed 200 OK in 69ms (Views: 54.0ms | ActiveRecord: 7.1ms | Allocations: 10034)
+
+
+Started GET "/users/5/posts/4" for ::1 at 2022-04-08 12:03:15 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 AND "posts"."id" = $2 LIMIT $3[0m  [["author_id", 5], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 4]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_add_comment.html.erb (Duration: 1.5ms | Allocations: 378)
+  Rendered posts/show.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1349)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 4207)
+Completed 200 OK in 31ms (Views: 10.9ms | ActiveRecord: 1.6ms | Allocations: 6666)
+
+
+Started POST "/users/5/posts/4/comments" for ::1 at 2022-04-08 12:03:24 +0300
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"text"=>"So profound!"}, "commit"=>"Comment", "user_id"=>"5", "post_id"=>"4"}
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:7:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:12:in `block (2 levels) in create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:12:in `block (2 levels) in create'
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:12:in `block (2 levels) in create'
+  [1m[36mComment Create (1.8ms)[0m  [1m[32mINSERT INTO "comments" ("text", "author_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "So profound!"], ["author_id", 5], ["post_id", 4], ["created_at", "2022-04-08 09:03:24.714659"], ["updated_at", "2022-04-08 09:03:24.714659"]]
+  ↳ app/controllers/comments_controller.rb:12:in `block (2 levels) in create'
+  [1m[36mPost Update All (1.1ms)[0m  [1m[33mUPDATE "posts" SET "comments_counter" = COALESCE("comments_counter", 0) + $1 WHERE "posts"."id" = $2[0m  [["comments_counter", 1], ["id", 4]]
+  ↳ app/models/comment.rb:9:in `update_comments_counter'
+  [1m[36mTRANSACTION (38.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:12:in `block (2 levels) in create'
+Redirected to http://localhost:3000/users/5/posts/4
+Completed 302 Found in 111ms (ActiveRecord: 53.2ms | Allocations: 11384)
+
+
+Started GET "/users/5/posts/4" for ::1 at 2022-04-08 12:03:24 +0300
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"user_id"=>"5", "id"=>"4"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 AND "posts"."id" = $2 LIMIT $3[0m  [["author_id", 5], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 4]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:11
+  Rendered posts/_add_comment.html.erb (Duration: 0.9ms | Allocations: 181)
+  Rendered posts/show.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1462)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 4307)
+Completed 200 OK in 41ms (Views: 20.0ms | ActiveRecord: 4.4ms | Allocations: 6702)
+
+
+Started POST "/users/5/posts/4/likes" for ::1 at 2022-04-08 12:03:28 +0300
+Processing by LikesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Like", "user_id"=>"5", "post_id"=>"4"}
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:3:in `create'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/likes_controller.rb:8:in `block (2 levels) in create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:8:in `block (2 levels) in create'
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:8:in `block (2 levels) in create'
+  [1m[36mLike Create (1.7ms)[0m  [1m[32mINSERT INTO "likes" ("author_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["author_id", 5], ["post_id", 4], ["created_at", "2022-04-08 09:03:28.542328"], ["updated_at", "2022-04-08 09:03:28.542328"]]
+  ↳ app/controllers/likes_controller.rb:8:in `block (2 levels) in create'
+  [1m[36mPost Update All (0.7ms)[0m  [1m[33mUPDATE "posts" SET "likes_counter" = COALESCE("likes_counter", 0) + $1 WHERE "posts"."id" = $2[0m  [["likes_counter", 1], ["id", 4]]
+  ↳ app/models/like.rb:9:in `update_likes_counter'
+  [1m[36mTRANSACTION (26.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/likes_controller.rb:8:in `block (2 levels) in create'
+Redirected to http://localhost:3000/users/5/posts/4
+Completed 302 Found in 103ms (ActiveRecord: 41.5ms | Allocations: 12093)
+
+
+Started GET "/users/5/posts/4" for ::1 at 2022-04-08 12:03:28 +0300
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"user_id"=>"5", "id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 AND "posts"."id" = $2 LIMIT $3[0m  [["author_id", 5], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 4]]
+  ↳ app/controllers/posts_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:11
+  Rendered posts/_add_comment.html.erb (Duration: 0.6ms | Allocations: 181)
+  Rendered posts/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1410)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 4271)
+Completed 200 OK in 26ms (Views: 14.6ms | ActiveRecord: 2.7ms | Allocations: 6652)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 12:05:32 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 3.0ms | Allocations: 4996)
+
+
+Started GET "/" for ::1 at 2022-04-08 12:05:32 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 890)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 15481)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.6ms | Allocations: 16309)
+
+
+Started GET "/users/sign_out" for ::1 at 2022-04-08 12:05:46 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.4ms | Allocations: 2178)
+
+
+Started GET "/" for ::1 at 2022-04-08 12:05:46 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 850)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3360)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms | Allocations: 3702)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-04-08 12:06:00 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 147)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 1099)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 3327)
+Completed 200 OK in 38ms (Views: 34.2ms | ActiveRecord: 0.0ms | Allocations: 4636)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-04-08 12:09:32 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 566)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1604)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 4244)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 5849)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-04-08 12:11:32 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.8ms | Allocations: 561)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1600)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 4245)
+Completed 200 OK in 13ms (Views: 11.8ms | Allocations: 5848)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 12:17:41 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1448)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1528)
+Completed 500 Internal Server Error in 8ms (Allocations: 3079)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h2 class="m-3">Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field m-3 row w-50">
+    <%= f.text_field :name, placeholder: "Password" %>
+  </div>
+
+  <div class="field m-3 row w-50">
+    <%= f.text_field :photo, placeholder: "Photo" %>
+  </div>
+
+  <div class="field m-3 row w-50">
+    <%= f.text_field :bio, placeholder: "Bio" %>
+  </div>
+
+  <div class="field m-3 row w-50">
+    <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field m-3 row w-50">
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, placeholder: "Password" autocomplete: "new-password" %>
+  </div>
+
+  <div class="field m-3 row w-50">
+    <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+):
+1:    <h2 class="m-3">Sign up</h2>
+2:    
+3:    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+4:      <%= render "devise/shared/error_messages", resource: resource %>
+5:    
+6:      <div class="field m-3 row w-50">
+7:        <%= f.text_field :name, placeholder: "Password" %>
+8:      </div>
+9:    
+10:      <div class="field m-3 row w-50">
+11:        <%= f.text_field :photo, placeholder: "Photo" %>
+12:      </div>
+13:    
+14:      <div class="field m-3 row w-50">
+15:        <%= f.text_field :bio, placeholder: "Bio" %>
+16:      </div>
+17:    
+18:      <div class="field m-3 row w-50">
+19:        <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email" %>
+20:      </div>
+21:    
+22:      <div class="field m-3 row w-50">
+23:        <% if @minimum_password_length %>
+24:        <em>(<%= @minimum_password_length %> characters minimum)</em>
+25:        <% end %><br />
+26:        <%= f.password_field :password, placeholder: "Password" autocomplete: "new-password" %>
+27:      </div>
+28:    
+29:      <div class="field m-3 row w-50">
+30:        <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" autocomplete: "new-password" %>
+31:      </div>
+32:    
+33:      <div class="actions">
+34:        <%= f.submit "Sign up" %>
+35:      </div>
+36:    <% end %>
+37:    
+38:    <%= render "devise/shared/links" %>
+  
+app/views/devise/registrations/new.html.erb:26: syntax error, unexpected local variable or method, expecting ')'
+app/views/devise/registrations/new.html.erb:30: syntax error, unexpected local variable or method, expecting ')'
+app/views/devise/registrations/new.html.erb:26: syntax error, unexpected local variable or method, expecting ')'
+app/views/devise/registrations/new.html.erb:30: syntax error, unexpected local variable or method, expecting ')'
+app/views/devise/registrations/new.html.erb:26: syntax error, unexpected local variable or method, expecting ')'
+app/views/devise/registrations/new.html.erb:30: syntax error, unexpected local variable or method, expecting ')'
+app/views/devise/registrations/new.html.erb:26: syntax error, unexpected local variable or method, expecting ')'
+app/views/devise/registrations/new.html.erb:30: syntax error, unexpected local variable or method, expecting ')'
+app/views/devise/registrations/new.html.erb:26: syntax error, unexpected local variable or method, expecting ')'
+app/views/devise/registrations/new.html.erb:30: syntax error, unexpected local variable or method, expecting ')'
+app/views/devise/registrations/new.html.erb:26: syntax error, unexpected local variable or method, expecting ')'
+app/views/devise/registrations/new.html.erb:30: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/users/sign_up" for ::1 at 2022-04-08 12:18:37 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 524)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2469)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 5125)
+Completed 200 OK in 16ms (Views: 14.5ms | Allocations: 6671)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 12:19:22 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 1.8ms | Allocations: 514)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2299)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4955)
+Completed 200 OK in 41ms (Views: 36.1ms | Allocations: 6514)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 12:19:58 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 514)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2295)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4935)
+Completed 200 OK in 9ms (Views: 8.3ms | Allocations: 6486)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 12:21:51 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 514)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2302)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 4942)
+Completed 200 OK in 13ms (Views: 11.3ms | Allocations: 6499)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 12:22:21 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 514)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2141)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 4781)
+Completed 200 OK in 13ms (Views: 12.4ms | Allocations: 6336)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 12:23:06 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 514)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2148)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 4788)
+Completed 200 OK in 9ms (Views: 8.0ms | Allocations: 6343)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 12:23:21 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 514)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1990)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 4637)
+Completed 200 OK in 14ms (Views: 12.4ms | Allocations: 6208)
+
+
