@@ -10926,3 +10926,124 @@ Processing by Devise::RegistrationsController#new as HTML
 Completed 200 OK in 14ms (Views: 12.4ms | Allocations: 6208)
 
 
+Started GET "/" for ::1 at 2022-04-08 18:00:07 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 101.6ms | Allocations: 8921)
+  Rendered layout layouts/application.html.erb (Duration: 518.9ms | Allocations: 43732)
+Completed 200 OK in 608ms (Views: 524.9ms | ActiveRecord: 14.1ms | Allocations: 52239)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 18:00:18 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.8ms | Allocations: 245)
+  Rendered devise/shared/_links.html.erb (Duration: 2.4ms | Allocations: 662)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 81.9ms | Allocations: 3448)
+  Rendered layout layouts/application.html.erb (Duration: 89.9ms | Allocations: 5677)
+Completed 200 OK in 108ms (Views: 94.4ms | ActiveRecord: 0.0ms | Allocations: 7626)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-04-08 18:00:23 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.9ms | Allocations: 387)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 67.1ms | Allocations: 3831)
+  Rendered layout layouts/application.html.erb (Duration: 115.3ms | Allocations: 6070)
+Completed 200 OK in 119ms (Views: 117.5ms | ActiveRecord: 0.0ms | Allocations: 7630)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-04-08 18:02:43 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 587)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-04-08 18:02:44 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 552)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-04-08 18:02:45 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 553)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-04-08 18:03:10 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"rittah.buyaki@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "rittah.buyaki@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 76ms (ActiveRecord: 2.0ms | Allocations: 3514)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-04-08 18:03:12 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"rittah.buyaki@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "rittah.buyaki@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 27ms (ActiveRecord: 3.4ms | Allocations: 1526)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-04-08 18:03:13 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"rittah.buyaki@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "rittah.buyaki@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 15ms (ActiveRecord: 1.6ms | Allocations: 1532)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-04-08 18:03:37 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ritta.sweta@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ritta.sweta@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 13ms (ActiveRecord: 1.2ms | Allocations: 1524)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-04-08 18:03:39 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ritta.sweta@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ritta.sweta@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 17ms (ActiveRecord: 1.9ms | Allocations: 1513)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-04-08 18:03:40 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ritta.sweta@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ritta.sweta@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 13ms (ActiveRecord: 1.1ms | Allocations: 1513)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-04-08 18:05:25 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ritta.sweta@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ritta.sweta@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 18ms (ActiveRecord: 1.3ms | Allocations: 1515)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-04-08 18:06:29 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"tom@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "tom@example.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 365ms (ActiveRecord: 1.0ms | Allocations: 6216)
+
+
+Started GET "/" for ::1 at 2022-04-08 18:06:29 +0300
+Processing by UsersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 848)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4041)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.5ms | Allocations: 4434)
+
+
