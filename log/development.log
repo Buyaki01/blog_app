@@ -13020,3 +13020,308 @@ Processing by PostsController#index as TURBO_STREAM
 Completed 200 OK in 103ms (Views: 92.3ms | ActiveRecord: 7.2ms | Allocations: 10092)
 
 
+Started GET "/" for ::1 at 2022-04-08 21:32:52 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 15.1ms | Allocations: 10568)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 59.1ms | Allocations: 47638)
+Completed 200 OK in 68ms (Views: 56.7ms | ActiveRecord: 4.3ms | Allocations: 56145)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 21:33:03 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms | Allocations: 3363)
+
+
+Started GET "/" for ::1 at 2022-04-08 21:33:03 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 644)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3825)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 1.2ms | Allocations: 4166)
+
+
+Started GET "/users/sign_out" for ::1 at 2022-04-08 21:33:06 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms | Allocations: 3345)
+
+
+Started GET "/" for ::1 at 2022-04-08 21:33:06 +0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 646)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3245)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 3589)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 21:33:10 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 245)
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 717)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 3495)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 5720)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.0ms | Allocations: 7201)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 21:35:06 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 1.9ms | Allocations: 566)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2062)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4698)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 6265)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 21:36:49 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 2.2ms | Allocations: 566)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 2079)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 4716)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.0ms | Allocations: 6295)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 21:37:53 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 566)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2026)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4662)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 6237)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 21:38:19 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 232)
+  Rendered devise/shared/_links.html.erb (Duration: 3.6ms | Allocations: 566)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 2003)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 4639)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.0ms | Allocations: 6205)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 21:39:29 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 566)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2083)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4729)
+Completed 200 OK in 13ms (Views: 11.9ms | Allocations: 6299)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 21:40:04 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 566)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2089)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4731)
+Completed 200 OK in 11ms (Views: 9.9ms | Allocations: 6293)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 21:40:08 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 123)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 811)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2951)
+Completed 200 OK in 7ms (Views: 5.1ms | Allocations: 3724)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 21:40:55 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 566)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2085)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 4721)
+Completed 200 OK in 9ms (Views: 8.1ms | Allocations: 6282)
+
+
+Started POST "/users" for ::1 at 2022-04-08 21:42:03 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Sweta", "photo"=>"https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80", "bio"=>"Singer", "email"=>"ritta.buyaki@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ritta.buyaki@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 830)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 577)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 3006)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 5683)
+Completed 200 OK in 286ms (Views: 14.4ms | ActiveRecord: 4.4ms | Allocations: 15838)
+
+
+Started POST "/users" for ::1 at 2022-04-08 21:42:04 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Sweta", "photo"=>"https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80", "bio"=>"Singer", "email"=>"ritta.buyaki@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ritta.buyaki@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 478)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 139)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1605)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3846)
+Completed 200 OK in 236ms (Views: 5.6ms | ActiveRecord: 0.6ms | Allocations: 8530)
+
+
+Started POST "/users" for ::1 at 2022-04-08 21:42:18 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Sweta", "photo"=>"https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80", "bio"=>"Singer", "email"=>"ritta.buyaki@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ritta.buyaki@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["name", "Sweta"], ["photo", "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80"], ["bio", "Singer"], ["posts_counter", 0], ["created_at", "2022-04-08 18:42:18.564142"], ["updated_at", "2022-04-08 18:42:18.564142"], ["email", "ritta.buyaki@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", "2022-04-08 18:42:18.564242"], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (41.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (Duration: 1.0ms | Allocations: 398)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 4.5ms
+Delivered mail 6250820a9a22d_e9ee3f5c65544@ritta-Lenovo-V510-14IKB.mail (2.7ms)
+Date: Fri, 08 Apr 2022 21:42:18 +0300
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: ritta.buyaki@gmail.com
+Message-ID: <6250820a9a22d_e9ee3f5c65544@ritta-Lenovo-V510-14IKB.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome ritta.buyaki@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=qTxdmgyBcsdSByEsXqwt">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 340ms (ActiveRecord: 41.8ms | Allocations: 38393)
+
+
+Started GET "/" for ::1 at 2022-04-08 21:42:18 +0300
+Processing by UsersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1041)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3613)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.3ms | Allocations: 4544)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 21:42:53 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 566)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2084)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 4726)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 6290)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-08 21:43:19 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 231)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 566)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2084)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4720)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 6283)
+
+
+Started POST "/users" for ::1 at 2022-04-08 21:45:04 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Buyaki", "photo"=>"https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/11/1080p-cute-Whatsapp-Dp-Profile-Images-pictures-free-hd.gif", "bio"=>"Happy", "email"=>"rittah.buyaki@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rittah.buyaki@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 479)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 139)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1607)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3832)
+Completed 200 OK in 288ms (Views: 4.5ms | ActiveRecord: 0.7ms | Allocations: 8695)
+
+
+Started POST "/users" for ::1 at 2022-04-08 21:45:14 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Buyaki", "photo"=>"https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/11/1080p-cute-Whatsapp-Dp-Profile-Images-pictures-free-hd.gif", "bio"=>"Happy", "email"=>"rittah.buyaki@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rittah.buyaki@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["name", "Buyaki"], ["photo", "https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/11/1080p-cute-Whatsapp-Dp-Profile-Images-pictures-free-hd.gif"], ["bio", "Happy"], ["posts_counter", 0], ["created_at", "2022-04-08 18:45:14.656042"], ["updated_at", "2022-04-08 18:45:14.656042"], ["email", "rittah.buyaki@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", "2022-04-08 18:45:14.656103"], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (36.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (Duration: 0.7ms | Allocations: 248)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 25.4ms
+Delivered mail 625082bab29fc_e9ee3f34656d2@ritta-Lenovo-V510-14IKB.mail (1.4ms)
+Date: Fri, 08 Apr 2022 21:45:14 +0300
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: rittah.buyaki@gmail.com
+Message-ID: <625082bab29fc_e9ee3f34656d2@ritta-Lenovo-V510-14IKB.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome rittah.buyaki@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=Hyp89bj_7ByzxUAuTUqC">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 353ms (ActiveRecord: 37.5ms | Allocations: 9999)
+
+
+Started GET "/" for ::1 at 2022-04-08 21:45:14 +0300
+Processing by UsersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1023)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3599)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 4531)
+
+
