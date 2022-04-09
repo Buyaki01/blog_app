@@ -1,8 +1,14 @@
 <div>
-  <h2>Create a post</h2>
-  <%= form_with model: @post, url: user_posts_path, scope: :post do |form| %>  
-    <%= form.text_field :title, placeholder: "Title", required: true %>
-    <%= form.text_area :text, placeholder: "Type here...", required: true %>
-    <%= form.submit "Post" %>
+  <h2 class="m-5">Create a post</h2>
+  <%= form_with model: @post, url: user_posts_path, scope: :post do |form| %>
+    <div class="m-5">  
+      <%= form.text_field :title, placeholder: "Title", required: true %>
+    </div> 
+    <div class="m-5"> 
+      <%= form.text_area :text, placeholder: "Type here...", required: true %>
+    </div> 
+    <div class="m-5">
+      <%= form.submit "Post" %>
+    </div>
   <% end %> 
 </div>
