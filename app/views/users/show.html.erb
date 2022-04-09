@@ -26,5 +26,8 @@
 
   <div class="d-flex justify-content-center mt-3 p-2">
     <button> <%=link_to "See all posts", user_posts_path(@user.id) %> </button>
+    <button class='btn btn-outline-info'>
+      <%= link_to 'Add new post', new_user_post_path(@user.id), class: "nav-link" %>
+    </button> 
   </div>
 </div>

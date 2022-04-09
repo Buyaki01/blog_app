@@ -1,36 +1,40 @@
-<h2 class="m-3">Sign up</h2>
+<h2 class="m-3 d-flex justify-content-center">Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field m-3 row w-50">
-    <%= f.text_field :name, placeholder: "Password" %>
+  <div class="field m-3 d-flex justify-content-center">
+    <%= f.text_field :name, placeholder: "Username", class: "w-50" %>
   </div>
 
-  <div class="field m-3 row w-50">
-    <%= f.text_field :photo, placeholder: "Photo" %>
+  <div class="field m-3 d-flex justify-content-center">
+    <%= f.text_field :photo, placeholder: "Photo", class: "w-50" %>
   </div>
 
-  <div class="field m-3 row w-50">
-    <%= f.text_field :bio, placeholder: "Bio" %>
+  <div class="field m-3 d-flex justify-content-center">
+    <%= f.text_field :bio, placeholder: "Bio", class: "w-50" %>
   </div>
 
-  <div class="field m-3 row w-50">
-    <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email" %>
+  <div class="field m-3 d-flex justify-content-center">
+    <%= f.email_field :email, placeholder: "Email", class: "w-50", autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field m-3 row w-50">
+  <div class="field">
+    <div class="m-3 d-flex justify-content-center">
     <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, placeholder: "Password", autocomplete: "new-password" %>
+    <em>(<%= @minimum_password_length %> characters minimum for your password)</em>
+  <% end %>
+    </div>
+    <div class="m-3 d-flex justify-content-center">
+      <%= f.password_field :password, placeholder: "Password", class: "w-50", autocomplete: "new-password" %>
+    </div>
   </div>
 
-  <div class="field m-3 row w-50">
-    <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", autocomplete: "new-password" %>
+  <div class="field m-3 d-flex justify-content-center">
+    <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", class: "w-50", autocomplete: "new-password" %>
   </div>
 
-  <div class="actions m-3">
+  <div class="actions m-3 d-flex justify-content-center">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
