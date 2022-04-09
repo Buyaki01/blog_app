@@ -30,28 +30,15 @@ RSpec.describe 'Users index page', type: :system do
       comments_counter: 0,
       likes_counter: 0
     )
-
     visit '/users'
   end
-
-  it 'should have all usernames for all users' do
-    expect(page).to have_css('h2', text: 'King')
-    expect(page).to have_css('h2', text: 'Jane')
-    expect(page).to have_css('h2', text: 'Peter')
-  end
-
   it 'should have user profile image' do
-    expect(page).to have_css("img[src*='https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg']")
-    expect(page).to have_css("img[src*='https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg']")
-    expect(page).to have_css("img[src*='https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg']")
+    all('img').each do |i|
+      expect(i[:src]).to eq('https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg')
+    end
   end
 
-  it 'should have number of posts ' do
-    expect(page).to have_content('Number of posts:2')
-  end
-
-  it 'expect on clicking on the user card it redirect to the user show page' do
-    click_link 'King'
-    expect(current_path).to eq(user_path(@user1))
+  it 'should have number of posts' do
+    all(:css, '.num_post').each { |post| expect(post).to have_content('Number of posts: 2') }
   end
 end

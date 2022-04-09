@@ -43,7 +43,8 @@ RSpec.describe 'Users show page', type: :feature do
   end
 
   it 'should display the number of posts' do
-    expect(page).to have_content('Number of posts:3')
+    user = User.first
+    expect(page).to have_content(user.posts_counter)
   end
 
   it "should display the user's bio" do
@@ -51,7 +52,7 @@ RSpec.describe 'Users show page', type: :feature do
   end
 
   it "should display the user's first 3 posts" do
-    expect(@user1.fetch_recent_posts.length).to eq(3)
+    expect(@user1.fetch_three_recent_posts.length).to eq(3)
   end
 
   it 'should have a button with see all posts' do
@@ -60,7 +61,7 @@ RSpec.describe 'Users show page', type: :feature do
 
   it "should redirect to post's show page when i click on a post" do
     click_link 'Zumba'
-    expect(current_path).to eq(user_post_path(@user1, @post2))
+    expect(current_path).to eq(user_posts_path(@user1))
   end
 
   it "should display a button that let's you view all user's posts" do

@@ -45,15 +45,7 @@ RSpec.describe 'Posts show page', type: :feature do
     expect(page).to have_content('King')
   end
   it 'should display the comment each commentor left' do
-    expect(page).to have_content('comment1')
-    expect(page).to have_content('comment2')
-    expect(page).to have_content('comment3')
-    expect(page).to have_content('comment4')
-    expect(page).to have_content('comment5')
-    expect(page).to have_content('comment6')
-  end
-  it 'should see the create post button and it navigates to the new post page' do
-    click_link 'Add new post'
-    expect(current_path).to eq(new_user_post_path)
+    expect(page).to have_content('Woow!')
+    expect(page).to have_content('Same to me')
   end
 end

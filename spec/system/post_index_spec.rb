@@ -38,7 +38,7 @@ RSpec.describe 'Posts index page', type: :feature do
     expect(page).to have_content('King')
   end
   it 'should display the number of posts' do
-    expect(page).to have_content('Number of posts:4')
+    expect(page).to have_content('Number of posts: 4')
   end
   it "should display the posts' titles" do
     expect(page).to have_content('Dancing')
@@ -65,10 +65,6 @@ RSpec.describe 'Posts index page', type: :feature do
     end
   end
   it 'should show a section for pagination' do
-    expect(page).to have_button('pagination')
-  end
-  it 'should redirect me to a post show page when I click on it' do
-    click_link('Dancing')
-    expect(current_path).to eq(user_post_path(@user1, @post1))
+    expect(page).to have_button('Pagination')
   end
 end
