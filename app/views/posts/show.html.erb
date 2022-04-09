@@ -16,5 +16,8 @@
     <%= form.submit "Like" %> 
   <% end %> 
   <%= render partial: "add_comment", local: { post: @post } %> 
+  <button class='btn btn-outline-info'>
+    <%= link_to 'Add new post', new_user_post_path(@post.author.id), class: "nav-link" %>
+  </button>
 </div>
 
