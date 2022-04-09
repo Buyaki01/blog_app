@@ -11047,3 +11047,37 @@ Processing by UsersController#index as TURBO_STREAM
 Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.5ms | Allocations: 4434)
 
 
+Started GET "/" for ::1 at 2022-04-09 07:17:44 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (27.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (49.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 164.8ms | Allocations: 10690)
+  Rendered layout layouts/application.html.erb (Duration: 494.1ms | Allocations: 45374)
+Completed 200 OK in 608ms (Views: 410.1ms | ActiveRecord: 101.7ms | Allocations: 53881)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-09 07:17:57 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 10.2ms | Allocations: 245)
+  Rendered devise/shared/_links.html.erb (Duration: 6.8ms | Allocations: 662)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 101.9ms | Allocations: 3444)
+  Rendered layout layouts/application.html.erb (Duration: 112.2ms | Allocations: 5673)
+Completed 200 OK in 148ms (Views: 119.6ms | ActiveRecord: 0.0ms | Allocations: 7622)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-04-09 07:18:01 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 77)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 741)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 2882)
+Completed 200 OK in 21ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 3677)
+
+
