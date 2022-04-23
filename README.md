@@ -10,7 +10,7 @@ Blog app allows users to login to their account and create a post that other use
 - Clone the GitHub repo and type the following commands in the terminal to run the following commands 
     ```
     bundle install
-    rails db:migrate
+    rails db:create db:migrate
     rails s
     ```
 
